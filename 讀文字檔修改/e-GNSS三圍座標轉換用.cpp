@@ -3,16 +3,16 @@
 using namespace std;
 
 int main(){
-	string name;
-	char ch, buf[102400];
+	char ch, buf[102400], name[50];
 	int max[1024], no_use[1024];
 	int  i=0, j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
-	//cout<< "Enter file name(EX:test.txt):";
-	//cin >> m;
+	
+	cout<< "Enter file name(EX:test.txt):";
+	cin >> name;
 	
 	ifstream ifs;	
-	//ifs.open(m);
-	ifs.open("test.txt");
+	
+	ifs.open(name);
 	ofstream Result("output.txt", ios::out);
 	
 	
