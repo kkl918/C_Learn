@@ -11,9 +11,11 @@ int main(){
 	cin >> name;
 	
 	ifstream ifs;	
-	
 	ifs.open(name);
-	ofstream Result("output.txt", ios::out);
+	if(!ifs)
+	 cout << "Fail to open file.\n";
+
+	 ofstream Result("output.txt", ios::out);
 	
 	
 	//讀文字檔出來儲存到陣列 
@@ -53,7 +55,7 @@ int main(){
     
     while(buf[j]!='\0'){
     	if( j == no_use[n]){
-    		buf[j++];
+    		buf[++j];
     		n++;
 		}
 		else
