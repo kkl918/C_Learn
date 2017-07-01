@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	char name[] = {'a','b','c','d','z'}, *ptr = name;
+	
+	
+	cout << "ptr:" << ptr << endl;
+	cout << "ptr+1:" << ptr+1 << endl;
+	cout << "*ptr:" << *ptr << endl;
+	cout << "*ptr+1:" << *ptr+1 << endl;
+	cout << "*(ptr+1):" << *(ptr+1) << endl;
+	cout << "---------------------\n";
+	
+	while(*ptr++ != '\0')
+	 cout << *ptr; 
+}
