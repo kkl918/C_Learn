@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(){
-	char ch, buf[102400], name[50];
+	string name, out;
+	char ch, buf[102400];
 	int max[1024], no_use[1024];
 	int  i=0, j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
 	
@@ -11,14 +12,14 @@ int main(){
 	cin >> name;
 	
 	ifstream ifs;	
-	ifs.open(name);
+	ifs.open(name.c_str());
 	if(!ifs)
 	 cout << "Fail to open file.\n";
-
-	 ofstream Result("output.txt", ios::out);
+	 out = name.insert(name.length()-4,"_");
+	 ofstream Result(out.c_str(), ios::out);
 	
 	
-	//Åª¤å¦rÀÉ¥X¨ÓÀx¦s¨ì°}¦C 
+	//è®€æ–‡å­—æª”å‡ºä¾†å„²å­˜åˆ°é™£åˆ— 
     while((ch = ifs.get()) != EOF){
         
 		
@@ -31,6 +32,7 @@ int main(){
 			 buf[bufp++] = 'E';
 			 buf[bufp++] = 'h';
 			 buf[bufp++] = ',';
+			
 			} 
 			 
 			else if(comma == 4)
@@ -43,7 +45,7 @@ int main(){
 		 
    } 
    
-    //§ä¨ì§Ú¤£­nªºªF¦è¦ì¸m 
+    //æ‰¾åˆ°æˆ‘ä¸è¦çš„æ±è¥¿ä½ç½® 
     while(buf[k++] != '\0' ){
 	     if(buf[k] =='\n'){
 			m = no_use[no_use_p++] = k-1;
