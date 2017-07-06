@@ -10,13 +10,13 @@ int main(){
 	
 	cout<< "Enter file name(EX:test.txt):";
 	cin >> name;
-	
+    cout << name.c_str();	
 	ifstream ifs;	
+ 
 	ifs.open(name.c_str());
-	if(!ifs)
-	 cout << "Fail to open file.\n";
-	 out = name.replace(name.length()-4,name.length(),".txt");
-	 ofstream Result(out.c_str(), ios::out);
+	 
+	out = name.replace(name.length()-4,name.length(),".txt");
+	ofstream Result(out.c_str(), ios::out);
 	
 	
 	//讀文字檔出來儲存到陣列 
@@ -37,6 +37,8 @@ int main(){
 			 
 			else if(comma == 4)
 			 comma = 0;
+			else
+			 buf[bufp++] = ch;
 		}
 		else{
 			 
