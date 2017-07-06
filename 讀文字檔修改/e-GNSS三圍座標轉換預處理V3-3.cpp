@@ -23,7 +23,7 @@ int main(){
     getdir(dir, files);
     
     
-    //for(int i=2; i<files.size()-2; i++){
+    //for(int i=2; i<files.size()-1; i++){
     for(int i=2; i<5; i++){
 			 
 		ifstream ifs;
