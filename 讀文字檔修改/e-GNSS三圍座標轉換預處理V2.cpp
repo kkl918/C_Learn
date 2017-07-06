@@ -15,7 +15,7 @@ int main(){
 	ifs.open(name.c_str());
 	if(!ifs)
 	 cout << "Fail to open file.\n";
-	 out = name.insert(name.length()-4,"_");
+	 out = name.replace(name.length()-4,name.length(),".txt");
 	 ofstream Result(out.c_str(), ios::out);
 	
 	
