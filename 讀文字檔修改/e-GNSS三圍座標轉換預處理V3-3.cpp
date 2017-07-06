@@ -10,10 +10,10 @@ using namespace std;
 int getdir(string dir, vector<string> &files);
 
 int main(){
-    	string str;
-        char ch, buf[102400];
+    string str;
+    char ch, buf[102400];
 	int  no_use[1024];
-		int  j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
+	int  j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
 	//int j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
 	
 	
