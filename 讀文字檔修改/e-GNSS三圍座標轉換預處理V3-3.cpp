@@ -10,9 +10,9 @@ using namespace std;
 int getdir(string dir, vector<string> &files);
 
 int main(){
-    	    string str;
-	    char ch, buf[102400];
-	    int  no_use[1024];
+    	string str;
+        char ch, buf[102400];
+	int  no_use[1024];
 		int  j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
 	//int j=0,k=0,m=0,n=0,comma=0, num_line=0, bufp=0,no_use_p=0;
 	
@@ -59,7 +59,7 @@ int main(){
 			 buf[bufp++] = ch; 
         } 
         
-        cout << &buf[0] << endl;
+        //cout << &buf[0] << endl;
         
         //找到我不要的東西位置 
         while(buf[k++] != '\0' ){
