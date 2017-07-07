@@ -23,8 +23,8 @@ int main(){
     getdir(dir, files);
     
     
-    //for(int i=2; i<files.size()-1; i++){
-    for(int i=2; i<5; i++){
+    for(int i=2; i<files.size()-1; i++){
+    //for(int i=2; i<5; i++){
 			 
 		ifstream ifs;
 		ifs.open(files[i].c_str());
@@ -36,7 +36,7 @@ int main(){
 
 		
 		// .dat -> .txt 
-		str = files[i].replace(files[i].length()-5, files[i].length(), ".txt");
+		str = files[i].replace(files[i].length()-4, files[i].length(), ".txt");
 		ofstream Result(str.c_str());
 	
 	    // 讀取檔案寫入陣列 
