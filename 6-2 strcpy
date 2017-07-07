@@ -1,0 +1,47 @@
+/* test.txt
+Pt8,2508506.2610,254065.1777,48.2278,
+Pt9,2508005.7329,253862.4901,37.5920,
+Pt10,2508076.9597,252464.6753,350.6068,
+Pt11,2507738.1021,253565.3651,42.4898,
+Pt8,2508506.2610,254065.1777,48.2278,
+*/
+
+#include <string>
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main(){		
+		int  no_use[1024];
+		int  bufp = 0, k=0,n=0,comma=0,no_use_p=0,j=0;
+	
+		ifstream ifs;
+		ifs.open("test.txt");
+		
+	    char ch, buf[102400];
+	    // 讀取檔案寫入陣列 
+		while((ch = ifs.get()) != EOF){
+			buf[bufp++] = ch; 
+			cout << ch;
+        } 
+        
+        cout << endl << "我是分隔線" << endl<< endl; 
+        
+        //找到我不要的東西位置 
+        while(buf[k++] != '\0' ){
+	     if(buf[k] =='\n')
+			no_use[no_use_p++] = k-1;
+        }
+
+		
+        
+		//實際寫入 
+        while(buf[j]!='\0'){
+    	 if( j == no_use[n]){
+    		buf[++j];
+    		n++;
+		 }else
+			cout << buf[j++];
+	    }
+	
+}
