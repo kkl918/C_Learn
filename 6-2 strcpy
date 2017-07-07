@@ -12,13 +12,12 @@ Pt8,2508506.2610,254065.1777,48.2278,
 using namespace std;
 
 int main(){		
-		int  no_use[1024];
-		int  bufp = 0, k=0,n=0,comma=0,no_use_p=0,j=0;
-	
+		int  bufp=0, k=0, n=0, comma=0, no_use[1024], no_use_p=0, j=0;
+	    char ch, buf[102400], buf2[102400];
 		ifstream ifs;
 		ifs.open("test.txt");
 		
-	    char ch, buf[102400];
+
 	    // 讀取檔案寫入陣列 
 		while((ch = ifs.get()) != EOF){
 			buf[bufp++] = ch; 
@@ -27,21 +26,23 @@ int main(){
         
         cout << endl << "我是分隔線" << endl<< endl; 
         
-        //找到我不要的東西位置 
-        while(buf[k++] != '\0' ){
-	     if(buf[k] =='\n')
-			no_use[no_use_p++] = k-1;
-        }
-
-		
+        cout << "&buf[0]:" << endl << &buf[0] << endl;
         
-		//實際寫入 
-        while(buf[j]!='\0'){
-    	 if( j == no_use[n]){
-    		buf[++j];
-    		n++;
-		 }else
-			cout << buf[j++];
-	    }
-	
+		cout << endl << "我是分隔線" << endl << endl; 
+        
+        char *p = buf, *s=buf2;
+        
+        
+        while((*s = *p) != '\0'){
+        	s++; p++;
+		}
+		
+		cout << &s[0];
+		
+/*
+這次嘗試釐清指針複製的用法，似乎一開始指向的東西有問題，導致無法成功複製。
+目前懷疑是*p = buf[]這裡有問題，嘗試指向 *p = "something"        
+*/        
+        
+            
 }
