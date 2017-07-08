@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+void strcpy(char *s, char *t);
+int main(){
+	char  buf_[50],  buf[] = "Hello";
+	char *ptr_, *ptr   = "World";
+	
+	char *s, *t = buf;
+    s=buf_;
+	
+	cout <<  *t   << endl;
+	cout <<  *t++ << endl;
+	cout <<  *t   << endl;
+	cout << t+1;  
+}
+
+
+void strcpy(char *s, char *t){    
+     while (*s++ = *t++);
+ }
