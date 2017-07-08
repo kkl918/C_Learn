@@ -1,0 +1,58 @@
+#include <string>
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+void line();
+
+int main(){		
+	cout << "A char type ptr experiment.";
+	
+	line();
+	
+	char  a[] = "HelloWorld"  , *ptr;
+	
+	
+	cout << "\tAt first:"                << endl;
+	//cout << "\t ptr:" <<  ptr          << endl; 
+	//cout << "\t*ptr:" << *ptr          << endl;
+	cout << "\t&a  :" << &a              << endl;
+	cout << "\t&ptr:" << &ptr            << endl;
+	line();
+	
+	
+	ptr = a;
+
+	cout << "\tAfter do [ ptr = &a ]:" << endl; 
+	cout << "\t ptr:" <<  ptr << endl;
+	cout << "\t*ptr:" << *ptr << endl; 
+	cout << "\t&ptr:" << &ptr << endl;
+    
+	line();
+	cout << "\t&a  :" <<  &a    << " \t\ta  自己的位置"     << endl;
+	cout << "\t&ptr:" <<  &ptr  << " \t\tptr自己的位置"     << endl; 
+	cout << "\t ptr:" <<  ptr   << " \t變數ptr儲存的是位置"     << endl;
+	cout << "\t*ptr:" << *ptr   << " \t\t\t指標ptr指向的是位置的值" <<endl;	
+    line();
+	
+	cout << "\t*ptr    :"   << *ptr     << endl;
+	cout << "\t*ptr+1  :"   << *ptr+1   << endl;  
+	cout << "\t*ptr+2  :"   << *ptr+2   << endl;  
+	cout << "\t*(ptr)  :"   << *ptr     << endl;
+	cout << "\t*(ptr+1):"   << *(ptr+1) << endl;  
+	cout << "\t*(ptr+2):"   << *(ptr+2) << endl;  
+	cout << "\t*(ptr++):"   << *(ptr++) << endl;
+	cout << "\t*(++ptr):"   << *(++ptr) << endl;
+	cout << "\t ptr    :"   <<  ptr     << endl;
+	cout << "\t ptr+1  :"   <<  ptr+1   << endl;	
+	cout << "\t ptr+2  :"   <<  ptr+2   << endl;	
+	cout << "\t&ptr    :"   << &ptr     << endl;
+	cout << "\t&ptr+1  :"   << &ptr+1   << endl;	
+	cout << "\t&ptr+2  :"   << &ptr+2   << endl;
+	cout << "\t a      :"   <<  a       << endl;  
+	
+}
+
+void line(){
+	cout << endl << "--------------------------------" << endl;
+}
