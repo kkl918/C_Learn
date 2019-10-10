@@ -1,36 +1,48 @@
-int sensorPin_0 = A0;    // select the input pin for the potentiometer
-int sensorPin_1 = A5;
-int ledPin = 13;      // select the pin for the LED
-int sensorValue_0 = 0;  // variable to store the value coming from the sensor
+int sensorPin_0 = A0;    
+int sensorPin_1 = A1;
+int sensorPin_2 = A2;
+      
+int sensorValue_0 = 0; 
 int sensorValue_1 = 0;
+int sensorValue_2 = 0;
+
+int ledPin = 13;
+
 int count = 0;
 
 void setup() {
-  // declare the ledPin as an OUTPUT:
-  pinMode(ledPin, OUTPUT);
+  pinMode(sensorPin_0, INPUT);
+  pinMode(sensorPin_1, INPUT);
+  pinMode(sensorPin_2, INPUT);
+  pinMode(ledPin     , OUTPUT);
+  
   Serial.begin(9600);
   Serial.println("[OK] Start");
 }
 
 void loop() {
-  // read the value from the sensor:
+  Serial.print("\n- - - - - Count : ");
+  Serial.print(count++);
+  Serial.println(" - - - - -");
+
   sensorValue_0 = analogRead(sensorPin_0);
-  //delay(100);
-  //sensorValue_1 = analogRead(sensorPin_1);
-  
-  //float vakue2percent = (sensorValue)/(1023);
-  Serial.print("Sensor A0 : ");
+  Serial.print("\nSensor A0 : ");
   Serial.println(sensorValue_0);
-  //Serial.print("Sensor A1 : ");
-  //Serial.println(sensorValue_1);
-  
-  // turn the ledPin on
-  digitalWrite(ledPin, HIGH);
-  // stop the program for <sensorValue> milliseconds:
-  delay(500);
-  // turn the ledPin off:
-  digitalWrite(ledPin, LOW);
-  // stop the program for for <sensorValue> milliseconds:
-  
   delay(100);
+
+  sensorValue_1 = analogRead(sensorPin_1);
+  Serial.print("\nSensor A1 : ");
+  Serial.println(sensorValue_1);
+  delay(100);
+
+  sensorValue_2 = analogRead(sensorPin_2);
+  Serial.print("\nSensor A2 : ");
+  Serial.println(sensorValue_2);
+  delay(100);
+  
+  digitalWrite(ledPin, HIGH);
+  delay(100);
+  digitalWrite(ledPin, LOW);
+
+  delay(1600);
 }
